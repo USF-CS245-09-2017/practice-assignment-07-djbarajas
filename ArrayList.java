@@ -1,9 +1,15 @@
 import java.util.Arrays;
 
 public class ArrayList<T> implements List<T> {
-    int MAX = 10;
-    int SIZE = 0;
-    T arr[] = (T[]) new Object[MAX];
+    int MAX ;
+    int SIZE ;
+    T arr[];
+
+    public ArrayList(){
+        MAX = 10;
+        SIZE = 0;
+        arr =  (T[]) new Object[MAX];
+    }
 
     @Override
     public void add(T item) {

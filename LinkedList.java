@@ -1,6 +1,11 @@
 public class LinkedList<T> implements List<T> {
-    int SIZE = 0;
-    Node<T> head = null;
+    int SIZE;
+    Node<T> head;
+
+    public LinkedList(){
+        head = null;
+        SIZE = 0;
+    }
 
     @Override
     public void add(T item) {

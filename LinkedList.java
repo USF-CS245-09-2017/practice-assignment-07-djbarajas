@@ -1,12 +1,20 @@
 public class LinkedList<T> implements List<T> {
     int SIZE;
     Node<T> head;
-
+    /*
+    *LinkedList()
+    * constructor, sets head to null
+    * and size to 0
+     */
     public LinkedList(){
         head = null;
         SIZE = 0;
     }
-
+    /*
+    * add()
+    * adds item to the end of the list and
+    * if there is no head then sets it to the head
+     */
     @Override
     public void add(T item) {
         if(head == null) {
@@ -23,6 +31,11 @@ public class LinkedList<T> implements List<T> {
         SIZE++;
     }
 
+    /*
+    * add()
+    * adds to any position in the list
+    * and modifies the head if needed
+     */
     @Override
     public void add(int pos, T item) {
         if (pos==0){
@@ -42,7 +55,10 @@ public class LinkedList<T> implements List<T> {
         }
         ++SIZE;
     }
-
+    /*
+    * get()
+    * gets from a specified position in the list
+     */
     @Override
     public T get(int pos) {
         Node get = head;
@@ -52,6 +68,10 @@ public class LinkedList<T> implements List<T> {
         return (T) get.getData();
     }
 
+    /*
+    * remove()
+    * removes from a certain position in the list
+     */
     @Override
     public T remove(int pos) {
         Node<T> prev = head;
@@ -69,7 +89,10 @@ public class LinkedList<T> implements List<T> {
         --SIZE;
         return  toDelete.getData();
     }
-
+    /*
+    *size()
+    * returns the current size of the list
+     */
     @Override
     public int size() {
         return SIZE;

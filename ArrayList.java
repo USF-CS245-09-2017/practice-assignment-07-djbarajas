@@ -1,19 +1,17 @@
 import java.util.Arrays;
 
 public class ArrayList<T> implements List<T> {
-    int MAX ;
     int SIZE ;
     T arr[];
 
     public ArrayList(){
-        MAX = 10;
         SIZE = 0;
-        arr =  (T[]) new Object[MAX];
+        arr =  (T[]) new Object[10];
     }
 
     @Override
     public void add(T item) {
-        if(SIZE == MAX) {
+        if(SIZE == arr.length) {
             grow();
         }
 
@@ -22,7 +20,7 @@ public class ArrayList<T> implements List<T> {
 
     @Override
     public void add(int pos, T item) {
-        if(SIZE == MAX) {
+        if(SIZE == arr.length) {
             grow();
         }
         arr[pos] = item;
@@ -51,8 +49,7 @@ public class ArrayList<T> implements List<T> {
     }
 
     public void grow(){
-        MAX = arr.length*2;
-        arr = Arrays.copyOfRange(arr,0, MAX);
+        arr = Arrays.copyOfRange(arr,0, arr.length*2);
 
     }
 }
